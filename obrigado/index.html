@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#7c3aed">
+<title>Pedido confirmado — My Secret</title>
+<meta name="robots" content="noindex,nofollow">
+
+<script>
+  window.META_PIXEL_ID = "2780957048709348";
+</script>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', window.META_PIXEL_ID);
+fbq('track', 'PageView');
+</script>
+
+<!-- UTMify Pixel -->
+<script>
+  window.pixelId = "6a0c85711b0bd29124c96633";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg-white: #ffffff;
+    --bg-gray: #f5f4f6;
+    --ink: #1f2937;
+    --ink-soft: #4b5563;
+    --ink-muted: #9ca3af;
+    --purple: #7c3aed;
+    --purple-deep: #6d28d9;
+    --purple-soft: #ede9fe;
+    --cta: #22c55e;
+    --cta-deep: #16a34a;
+    --line: #e5e7eb;
+    --sans: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: var(--sans); background: var(--bg-gray); color: var(--ink);
+    line-height: 1.55; font-size: 16px; -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  img { max-width: 100%; display: block; }
+
+  .header {
+    background: var(--purple); padding: 14px 20px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff;
+  }
+  .header-logo { height: 38px; filter: brightness(0) invert(1); }
+
+  .wrap { max-width: 440px; margin: 0 auto; padding: 40px 20px; }
+
+  .success-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    margin-bottom: 16px;
+  }
+  .success-check {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 18px;
+    background: #dcfce7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pop 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  }
+  @keyframes pop {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .success-check svg {
+    width: 48px;
+    height: 48px;
+    color: #16a34a;
+    stroke-width: 3.5;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  h1 span { color: #16a34a; }
+  .subtitle {
+    font-size: 15px;
+    color: var(--ink-soft);
+    max-width: 320px;
+    margin: 0 auto 22px;
+  }
+
+  .info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 24px;
+  }
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+    background: var(--bg-gray);
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .info-icon {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--purple-soft);
+    color: var(--purple);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .info-icon svg { width: 18px; height: 18px; }
+  .info-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .info-text {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+
+  .tx-info {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    font-size: 11.5px;
+    color: var(--ink-muted);
+  }
+  .tx-info code {
+    font-family: 'Courier New', monospace;
+    color: var(--ink-soft);
+    background: var(--bg-gray);
+    padding: 2px 6px;
+    border-radius: 4px;
+    word-break: break-all;
+  }
+
+  .footer-mini {
+    text-align: center; color: var(--ink-muted);
+    font-size: 11.5px; padding: 22px 16px 8px; line-height: 1.6;
+  }
+  .footer-mini a { color: var(--ink-muted); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <img src="../assets/logo-mysecret.png" alt="My Secret" class="header-logo">
+</header>
+
+<main class="wrap">
+
+  <div class="success-card">
+    <div class="success-check">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+    <h1>Pagamento <span>confirmado!</span></h1>
+    <p class="subtitle">Recebemos seu pagamento e seu pedido já está em separação.</p>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <div>
+          <div class="info-title">Acompanhe pelo seu e-mail</div>
+          <div class="info-text">Em alguns minutos você receberá a confirmação e o código de rastreio assim que o pedido for postado.</div>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13"/>
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+            <circle cx="5.5" cy="18.5" r="2.5"/>
+            <circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+        <div>
+          <div class="info-title">Entrega em 3 a 7 dias úteis</div>
+          <div class="info-text">Embalagem 100% discreta — sem identificação externa do produto.</div>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="info-title">7 dias de garantia</div>
+          <div class="info-text">Não amou? Devolvemos 100% do seu dinheiro em até 7 dias após o recebimento.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tx-info">
+      Pedido <code id="txId">—</code>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer-mini">
+  <p>📧 <a href="mailto:mysecret24h@hotmail.com">mysecret24h@hotmail.com</a> · 📞 (11) 3974-5008</p>
+  <p>CNPJ: 46.267.635/0001-50</p>
+</footer>
+
+<script>
+  // Pega tx ID
+  var urlParams = new URLSearchParams(window.location.search);
+  var txId = urlParams.get('tx') || '';
+  if (txId) {
+    document.getElementById('txId').textContent = txId;
+  }
+
+  // ============================================================
+  // PURCHASE EVENT — disparado client-side com event_id = txId
+  // O webhook server-side também dispara com mesmo event_id.
+  // Meta DEDUPLICA automaticamente pelo event_id (não dobra a conversão).
+  // ============================================================
+
+  // Tenta resgatar valor da última transação salva
+  var amount = 47.90;
+  var hasBump = false;
+  try {
+    var pixData = JSON.parse(localStorage.getItem('mysecret_pix') || '{}');
+    if (pixData.amount) amount = pixData.amount / 100;
+  } catch(e) {}
+  try {
+    var checkout = JSON.parse(localStorage.getItem('mysecret_checkout') || '{}');
+    if (checkout.bump) hasBump = true;
+  } catch(e) {}
+
+  // Previne disparo duplicado (se a pessoa der refresh na pagina)
+  var firedKey = 'purchase_fired_' + txId;
+  if (txId && !sessionStorage.getItem(firedKey)) {
+    try {
+      if (window.fbq) {
+        fbq('track', 'Purchase', {
+          currency: 'BRL',
+          value: amount,
+          content_name: hasBump ? 'My Secret + K-Med' : 'My Secret',
+          content_category: 'wellness',
+          num_items: hasBump ? 3 : 2,
+          transaction_id: txId
+        }, {
+          eventID: txId // CRÍTICO: deduplica com CAPI server-side
+        });
+      }
+      sessionStorage.setItem(firedKey, '1');
+    } catch(e) {
+      console.error('Pixel Purchase error:', e);
+    }
+  }
+
+  // Limpa TUDO que sobrou (main + upsell + downsell)
+  try {
+    localStorage.removeItem('mysecret_checkout');
+    localStorage.removeItem('mysecret_pix');
+    localStorage.removeItem('mysecret_timer_start');
+    localStorage.removeItem('mysecret_pix_timer');
+    localStorage.removeItem('mysecret_upsell_pix');
+    localStorage.removeItem('mysecret_upsell_pix_timer');
+    localStorage.removeItem('mysecret_upsell_timer_v18');
+    localStorage.removeItem('mysecret_downsell_shown_v18');
+  } catch(e) {}
+</script>
+
+</body>
+</html>
