@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#7c3aed">
+<title>Pagamento PIX · Gel Hot — My Secret</title>
+<meta name="robots" content="noindex,nofollow">
+
+<script>
+  window.META_PIXEL_ID = "2780957048709348";
+</script>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', window.META_PIXEL_ID);
+fbq('track', 'PageView');
+</script>
+
+<!-- UTMify Pixel -->
+<script>
+  window.pixelId = "6a0c85711b0bd29124c96633";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- QR Code library (gera QR a partir do código copia-cola) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<style>
+  :root {
+    --bg-white: #ffffff;
+    --bg-gray: #f5f4f6;
+    --ink: #1f2937;
+    --ink-soft: #4b5563;
+    --ink-muted: #9ca3af;
+    --purple: #7c3aed;
+    --purple-deep: #6d28d9;
+    --purple-soft: #ede9fe;
+    --purple-bg: #8b5cf6;
+    --cta: #22c55e;
+    --cta-deep: #16a34a;
+    --line: #e5e7eb;
+    --error: #ef4444;
+    --sans: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: var(--sans); background: var(--bg-gray); color: var(--ink);
+    line-height: 1.55; font-size: 16px; -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  img { max-width: 100%; display: block; }
+
+  .header {
+    background: var(--purple); padding: 14px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+    color: #fff; position: sticky; top: 0; z-index: 50;
+  }
+  .header-logo { height: 38px; filter: brightness(0) invert(1); }
+  .header-secure {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 11.5px; font-weight: 700; letter-spacing: 0.05em;
+    line-height: 1.1; text-align: right;
+  }
+  .header-secure svg { width: 16px; height: 16px; }
+  .header-secure-line2 { font-size: 10px; opacity: 0.85; font-weight: 600; }
+
+  .steps-bar {
+    background: var(--purple-deep); color: #fff;
+    padding: 12px 16px; display: flex; justify-content: center;
+    gap: 14px; font-size: 12.5px; font-weight: 700;
+  }
+  .step { display: inline-flex; align-items: center; gap: 6px; opacity: 0.45; }
+  .step.active { opacity: 1; }
+  .step.done { opacity: 1; }
+  .step-num {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: rgba(255,255,255,0.18); display: inline-flex;
+    align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 800;
+  }
+  .step.active .step-num { background: #fde047; color: var(--purple-deep); }
+  .step.done .step-num { background: #22c55e; color: #fff; }
+
+  .wrap { max-width: 440px; margin: 0 auto; padding: 20px 16px 40px; }
+
+  /* TIMER */
+  .timer-banner {
+    background: #fef3c7; border-bottom: 1px solid #fcd34d;
+    color: #78350f; text-align: center; padding: 10px 16px;
+    font-size: 13px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .timer-banner svg { width: 16px; height: 16px; }
+  .timer-banner strong {
+    font-variant-numeric: tabular-nums; font-weight: 800;
+    background: rgba(0,0,0,0.08); padding: 1px 6px; border-radius: 4px;
+  }
+  .timer-banner.expired {
+    background: #fee2e2; border-bottom-color: #fca5a5; color: #991b1b;
+  }
+
+  /* INTRO */
+  .intro {
+    text-align: center;
+    padding: 24px 0 14px;
+  }
+  .intro h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .intro p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* STATUS WAITING */
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #fef3c7;
+    color: #78350f;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 12.5px;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+  .status-pill .status-dot {
+    width: 8px;
+    height: 8px;
+    background: #f59e0b;
+    border-radius: 50%;
+    animation: status-pulse 1.6s infinite;
+  }
+  @keyframes status-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  /* QR CODE CARD */
+  .qr-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    margin-bottom: 14px;
+  }
+  .qr-wrap {
+    width: 240px;
+    height: 240px;
+    margin: 0 auto 14px;
+    padding: 12px;
+    background: #fff;
+    border: 2px solid var(--purple-soft);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .qr-wrap img,
+  .qr-wrap canvas {
+    width: 100%;
+    height: 100%;
+  }
+  .qr-amount {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+  }
+  .qr-amount-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .qr-instructions {
+    background: var(--purple-soft);
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-align: left;
+    margin-bottom: 4px;
+  }
+  .qr-instructions strong {
+    display: block;
+    font-size: 13px;
+    color: var(--purple-deep);
+    margin-bottom: 8px;
+    font-weight: 800;
+  }
+  .qr-instructions ol {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  .qr-instructions li { margin-bottom: 2px; }
+
+  /* COPY CARD */
+  .copy-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    margin-bottom: 14px;
+  }
+  .copy-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--ink);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .copy-title svg { width: 14px; height: 14px; color: var(--purple); }
+  .copy-subtitle {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+  .copy-code {
+    background: var(--bg-gray);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 11.5px;
+    color: var(--ink);
+    word-break: break-all;
+    max-height: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+    line-height: 1.45;
+  }
+  .copy-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--purple);
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .copy-btn:hover { background: var(--purple-deep); transform: scale(1.02); }
+  .copy-btn:active { transform: scale(0.98); }
+  .copy-btn.copied { background: var(--cta); }
+  .copy-btn svg { width: 16px; height: 16px; }
+
+  /* INFO BLOCK */
+  .info-block {
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .info-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #dcfce7;
+    color: #166534;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .info-icon svg { width: 18px; height: 18px; }
+  .info-text {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+  .info-text strong { color: var(--ink); }
+
+  /* LOADING / ERROR STATES */
+  .loading-state {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .loading-spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--purple-soft);
+    border-top-color: var(--purple);
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+    margin: 0 auto 18px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-text {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 15px;
+  }
+  .error-state {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .error-state h3 {
+    color: var(--error);
+    font-size: 15px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .error-state p {
+    font-size: 13px;
+    color: #7f1d1d;
+    margin-bottom: 12px;
+  }
+  .error-state button {
+    padding: 10px 22px;
+    background: var(--error);
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .footer-mini {
+    text-align: center; color: var(--ink-muted);
+    font-size: 11.5px; padding: 22px 16px 8px; line-height: 1.6;
+  }
+  .footer-mini a { color: var(--ink-muted); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <img src="../assets/logo-mysecret.png" alt="My Secret" class="header-logo">
+  <div class="header-secure">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="11" width="18" height="11" rx="2"/>
+      <path d="M7 11V7a5 5 0 0110 0v4"/>
+    </svg>
+    <div>PAGAMENTO<br><span class="header-secure-line2">100% SEGURO</span></div>
+  </div>
+</header>
+
+<div class="steps-bar">
+  <div class="step done"><span class="step-num">✓</span><span>Identificação</span></div>
+  <div class="step active"><span class="step-num">2</span><span>Pagamento PIX</span></div>
+</div>
+
+<div class="timer-banner" id="timerBanner" style="display: none;">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" id="timerIcon">
+    <circle cx="12" cy="12" r="10"/>
+    <polyline points="12 6 12 12 16 14"/>
+  </svg>
+  <span id="timerText">Este PIX expira em <strong id="timerDisplay">30:00</strong></span>
+</div>
+
+<main class="wrap">
+
+  <!-- LOADING (enquanto gera o PIX) -->
+  <div id="loadingState" class="loading-state">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Gerando seu PIX seguro...</div>
+  </div>
+
+  <!-- ERROR -->
+  <div id="errorState" class="error-state" style="display:none;">
+    <h3>Não foi possível gerar o PIX</h3>
+    <p id="errorMessage">Tente novamente em alguns instantes.</p>
+    <button onclick="window.location.href='../upsell/'">Voltar para o checkout</button>
+  </div>
+
+  <!-- PIX READY (mostrado depois) -->
+  <div id="pixReady" style="display:none;">
+
+    <div class="intro">
+      <h1>Falta pouco! 🎉</h1>
+      <p>Pague o PIX abaixo para finalizar seu pedido</p>
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span id="statusText">Aguardando pagamento</span>
+      </div>
+    </div>
+
+    <!-- QR CODE -->
+    <div class="qr-card">
+      <div class="qr-wrap" id="qrCodeWrap"></div>
+      <div class="qr-amount">Total a pagar</div>
+      <div class="qr-amount-value" id="qrAmount">R$ 0,00</div>
+      <div class="qr-instructions">
+        <strong>📱 Como pagar pelo celular</strong>
+        <ol>
+          <li>Abra o app do seu banco</li>
+          <li>Escolha pagar com PIX por QR Code</li>
+          <li>Aponte a câmera para o código ao lado</li>
+          <li>Confirme o pagamento</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- COPY CODE -->
+    <div class="copy-card">
+      <div class="copy-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2"/>
+          <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+        </svg>
+        PIX Copia e Cola
+      </div>
+      <div class="copy-subtitle">Ou copie o código abaixo e cole no seu app do banco</div>
+      <div class="copy-code" id="pixCode">Carregando...</div>
+      <button class="copy-btn" id="copyBtn" onclick="copyPixCode()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2"/>
+          <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+        </svg>
+        Copiar código PIX
+      </button>
+    </div>
+
+    <!-- INFO -->
+    <div class="info-block">
+      <div class="info-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <div class="info-text">
+        <strong>Detectamos automaticamente</strong> quando seu pagamento for confirmado e você será redirecionada para a tela final.
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer-mini">
+  <p>📧 <a href="mailto:mysecret24h@hotmail.com">mysecret24h@hotmail.com</a> · 📞 (11) 3974-5008</p>
+  <p>CNPJ: 46.267.635/0001-50 · Compra 100% segura</p>
+</footer>
+
+<script>
+  // ============================================================
+  // FLOW: lê dados do localStorage (gravado pela /entrega/),
+  //        cria PIX via /api/create-pix, mostra QR + faz polling.
+  // ============================================================
+
+  var checkoutData;
+  try {
+    checkoutData = JSON.parse(localStorage.getItem('mysecret_checkout') || '{}');
+  } catch(e) {
+    checkoutData = {};
+  }
+
+  // Se não tem dados, volta pro upsell (ou pro funil)
+  if (!checkoutData.nome || !checkoutData.email || !checkoutData.cpf || !checkoutData.telefone) {
+    window.location.href = '../upsell/';
+  }
+
+  // Limpa timer antigo se tiver de tentativa anterior (PIX novo = timer novo)
+  // Mas mantém se for a mesma transação (refresh)
+  try {
+    var lastPix = JSON.parse(localStorage.getItem('mysecret_upsell_pix') || '{}');
+    if (!lastPix.transactionId) {
+      localStorage.removeItem('mysecret_upsell_pix_timer');
+    }
+  } catch(e) {}
+
+  var loadingEl = document.getElementById('loadingState');
+  var errorEl = document.getElementById('errorState');
+  var errorMsgEl = document.getElementById('errorMessage');
+  var pixReadyEl = document.getElementById('pixReady');
+  var qrAmountEl = document.getElementById('qrAmount');
+  var pixCodeEl = document.getElementById('pixCode');
+  var copyBtn = document.getElementById('copyBtn');
+  var qrCodeWrap = document.getElementById('qrCodeWrap');
+  var statusText = document.getElementById('statusText');
+
+  // Helpers
+  function fmtBRL(cents) {
+    return 'R$ ' + (cents / 100).toFixed(2).replace('.', ',');
+  }
+
+  function getUTMs() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var stored = {};
+    try { stored = JSON.parse(localStorage.getItem('mysecret_utms') || '{}'); } catch(e) {}
+    return {
+      utm_source: urlParams.get('utm_source') || stored.utm_source || '',
+      utm_medium: urlParams.get('utm_medium') || stored.utm_medium || '',
+      utm_campaign: urlParams.get('utm_campaign') || stored.utm_campaign || '',
+      utm_content: urlParams.get('utm_content') || stored.utm_content || '',
+      utm_term: urlParams.get('utm_term') || stored.utm_term || '',
+      fbclid: urlParams.get('fbclid') || stored.fbclid || ''
+    };
+  }
+
+  // Lê _fbp e _fbc dos cookies (Meta Pixel grava sozinho)
+  function getCookie(name) {
+    var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    return m ? decodeURIComponent(m[1]) : '';
+  }
+
+  // PIX_DATA é setado depois que /api/create-pix responde
+  var PIX_DATA = null;
+  var POLLING_INTERVAL = null;
+
+  function showError(msg) {
+    loadingEl.style.display = 'none';
+    pixReadyEl.style.display = 'none';
+    errorEl.style.display = 'block';
+    if (msg) errorMsgEl.textContent = msg;
+  }
+
+  function showPix(data) {
+    loadingEl.style.display = 'none';
+    errorEl.style.display = 'none';
+    pixReadyEl.style.display = 'block';
+
+    PIX_DATA = data;
+
+    // Salva pra retorno se trocar de aba
+    try {
+      localStorage.setItem('mysecret_upsell_pix', JSON.stringify({
+        transactionId: data.transactionId,
+        qrcode: data.pix.qrcode,
+        amount: data.amount,
+        createdAt: Date.now()
+      }));
+    } catch(e) {}
+
+    qrAmountEl.textContent = fmtBRL(data.amount);
+    pixCodeEl.textContent = data.pix.qrcode;
+
+    // QR Code: usa qrcodeImage se vier base64, senão gera do qrcode (copia-cola)
+    qrCodeWrap.innerHTML = '';
+    if (data.pix.qrcodeImage && data.pix.qrcodeImage.startsWith('data:')) {
+      var img = document.createElement('img');
+      img.src = data.pix.qrcodeImage;
+      img.alt = 'QR Code PIX';
+      qrCodeWrap.appendChild(img);
+    } else if (data.pix.qrcode) {
+      new QRCode(qrCodeWrap, {
+        text: data.pix.qrcode,
+        width: 216,
+        height: 216,
+        colorDark: '#1f2937',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    }
+
+    // Dispara AddPaymentInfo
+    try {
+      if (window.fbq) {
+        fbq('track', 'AddPaymentInfo', {
+          currency: 'BRL',
+          value: data.amount / 100,
+          content_name: 'My Secret PIX',
+          transaction_id: data.transactionId
+        });
+      }
+    } catch(e) {}
+
+    // Inicia timer + polling
+    startPixTimer();
+    startPolling(data.transactionId);
+  }
+
+  function startPolling(txId) {
+    if (POLLING_INTERVAL) clearInterval(POLLING_INTERVAL);
+
+    var pollCount = 0;
+    var MAX_POLLS = 450; // 30min / 4s = 450
+
+    POLLING_INTERVAL = setInterval(async function() {
+      pollCount++;
+      if (pollCount > MAX_POLLS) {
+        clearInterval(POLLING_INTERVAL);
+        return;
+      }
+
+      try {
+        var resp = await fetch('/api/check-pix?id=' + encodeURIComponent(txId));
+        var data = await resp.json();
+        if (!data.success) return;
+
+        if (data.status === 'paid') {
+          clearInterval(POLLING_INTERVAL);
+          // Pagou o upsell/downsell — limpa só o PIX do upsell.
+          // checkout/utms NÃO são apagados aqui — só no /obrigado/ (ponto final do funil).
+          try {
+            localStorage.removeItem('mysecret_upsell_pix');
+            localStorage.removeItem('mysecret_upsell_pix_timer');
+          } catch(e) {}
+          window.location.href = '../obrigado/?tx=' + encodeURIComponent(txId) + '&upsell=1';
+          return;
+        }
+
+        if (data.status === 'refused' || data.status === 'cancelled') {
+          clearInterval(POLLING_INTERVAL);
+          statusText.textContent = 'Pagamento ' + (data.status === 'refused' ? 'recusado' : 'cancelado');
+          showError('Não foi possível processar seu pagamento. Tente novamente.');
+          return;
+        }
+      } catch(err) {
+        console.error('Polling error:', err);
+      }
+    }, 4000);
+  }
+
+  // Copy
+  function copyPixCode() {
+    if (!PIX_DATA || !PIX_DATA.pix.qrcode) return;
+    var code = PIX_DATA.pix.qrcode;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(code).then(showCopied).catch(fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+    function fallbackCopy() {
+      var ta = document.createElement('textarea');
+      ta.value = code;
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); showCopied(); } catch(e) {}
+      document.body.removeChild(ta);
+    }
+    function showCopied() {
+      copyBtn.classList.add('copied');
+      copyBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Código copiado!';
+      setTimeout(function() {
+        copyBtn.classList.remove('copied');
+        copyBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copiar código PIX';
+      }, 2500);
+    }
+  }
+  window.copyPixCode = copyPixCode;
+
+  // TIMER 30min — só começa DEPOIS que o PIX é gerado com sucesso
+  function startPixTimer() {
+    var TIMER_KEY = 'mysecret_upsell_pix_timer';
+    var DURATION_MS = 30 * 60 * 1000;
+    var display = document.getElementById('timerDisplay');
+    var banner = document.getElementById('timerBanner');
+    var icon = document.getElementById('timerIcon');
+    var textEl = document.getElementById('timerText');
+
+    var startTime;
+    try {
+      startTime = parseInt(localStorage.getItem(TIMER_KEY), 10);
+      if (!startTime || isNaN(startTime)) {
+        startTime = Date.now();
+        localStorage.setItem(TIMER_KEY, startTime.toString());
+      }
+    } catch(e) { startTime = Date.now(); }
+
+    // Mostra o banner agora que tem PIX gerado
+    banner.style.display = 'flex';
+
+    function pad(n) { return n < 10 ? '0' + n : n.toString(); }
+    var expired = false;
+
+    function tick() {
+      var elapsed = Date.now() - startTime;
+      var remaining = DURATION_MS - elapsed;
+      if (remaining <= 0) {
+        if (!expired) {
+          expired = true;
+          banner.classList.add('expired');
+          icon.innerHTML = '<path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>';
+          textEl.innerHTML = '<strong>PIX expirado</strong> — gere um novo voltando ao checkout';
+        }
+        return;
+      }
+      var totalSeconds = Math.floor(remaining / 1000);
+      var minutes = Math.floor(totalSeconds / 60);
+      var seconds = totalSeconds % 60;
+      display.textContent = pad(minutes) + ':' + pad(seconds);
+    }
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  // CARREGA O PIX (já foi gerado no /upsell/ — só lê do localStorage e mostra)
+  (async function loadUpsellPix() {
+    try {
+      var urlTxId = new URLSearchParams(window.location.search).get('id');
+      var stored = null;
+      try {
+        stored = JSON.parse(localStorage.getItem('mysecret_upsell_pix') || 'null');
+      } catch(e) {}
+
+      // Validação: precisa ter dados do PIX no localStorage e bater com o ID na URL
+      if (!stored || !stored.transactionId || !stored.qrcode) {
+        showError('Sessão expirada. Volte ao checkout pra continuar.');
+        return;
+      }
+      if (urlTxId && stored.transactionId !== urlTxId) {
+        showError('ID da transação inválido.');
+        return;
+      }
+
+      // Monta data no formato esperado por showPix()
+      showPix({
+        transactionId: stored.transactionId,
+        amount: stored.amount,
+        pix: {
+          qrcode: stored.qrcode,
+          qrcodeImage: stored.qrcodeImage
+        }
+      });
+    } catch(err) {
+      console.error('[upsell-pix] erro:', err);
+      showError('Erro ao carregar PIX. Tente novamente.');
+    }
+  })();
+</script>
+
+<div style="position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#facc15;color:#000;text-align:center;font:700 11px/1.6 sans-serif;padding:4px;letter-spacing:0.05em;">⚠ AMBIENTE DE TESTE · VALORES R$ 1,00 · NÃO É PRODUÇÃO</div></body>
+</html>
